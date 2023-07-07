@@ -8,10 +8,10 @@ const browserOptions: LaunchOptions = {
   },
   headless: true,
 };
+process.env.USE_ALLURE = '1';
 
 export const config = {
   browser: process.env.BROWSER || 'chromium',
   browserOptions,
   BASE_URL: 'https://noah.com/',
-  IMG_THRESHOLD: { threshold: 0.4 },
 };

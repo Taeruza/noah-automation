@@ -12,7 +12,7 @@ const config = {
 };
 
 if (process.env.USE_ALLURE) {
-  config.format.push('./src/support/reporters/allure-reporter.ts');
+  config.format.push('./src/helpers/reporters/allure-reporter.ts');
 } else {
   config.format.push('@cucumber/pretty-formatter');
 }
