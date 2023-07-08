@@ -15,7 +15,3 @@ Then(`All required fields should be filled`, () => {
 Given(`User fill out all the required fields of the application form`, () => {
   // [Given] Sets up the initial state of the system.
 });
-
-Then(`All required fields should be filled with old data`, () => {
-  // [Then] Describes the expected outcome or result of the scenario.
-});

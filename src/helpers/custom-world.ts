@@ -7,7 +7,7 @@ export interface CucumberWorldConstructorParams {
   parameters: { [key: string]: string };
 }
 
-export interface ICustomWorld extends World {
+export type ICustomWorld = {
   debug: boolean;
   feature?: messages.Pickle;
   context?: BrowserContext;
@@ -19,7 +19,7 @@ export interface ICustomWorld extends World {
   server?: APIRequestContext;
 
   playwrightOptions?: PlaywrightTestOptions;
-}
+} & World;
 
 export class CustomWorld extends World implements ICustomWorld {
   constructor(options: IWorldOptions) {

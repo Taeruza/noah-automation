@@ -1,37 +1,32 @@
-import { AllureRuntime, CucumberJSAllureFormatter } from 'allure-cucumberjs';
+import { AllureRuntime } from 'allure-js-commons';
+import { CucumberJSAllureFormatter } from 'allure-cucumberjs';
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-function Reporter(options: any) {
-  return new CucumberJSAllureFormatter(
-    options,
-    new AllureRuntime({ resultsDir: './reports/allure-results' }),
-    {
+export default class extends CucumberJSAllureFormatter {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  constructor(options: any) {
+    super(options, new AllureRuntime({ resultsDir: './reports/allure-results' }), {
       labels: [
         {
-          name: 'epic',
           pattern: [/@feature:(.*)/],
+          name: 'epic',
         },
         {
-          name: 'severity',
           pattern: [/@severity:(.*)/],
+          name: 'severity',
         },
       ],
       links: [
         {
-          type: 'issue',
           pattern: [/@issue=(.*)/],
+          type: 'issue',
           urlTemplate: 'http://localhost:8080/issue/%s',
         },
         {
-          type: 'tms',
           pattern: [/@tms=(.*)/],
+          type: 'tms',
           urlTemplate: 'http://localhost:8080/tms/%s',
         },
       ],
-    },
-  );
+    });
+  }
 }
-Reporter.prototype = Object.create(CucumberJSAllureFormatter.prototype);
-Reporter.prototype.constructor = Reporter;
-
-exports.default = Reporter;

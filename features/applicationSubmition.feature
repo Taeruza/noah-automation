@@ -20,4 +20,4 @@ Feature: Application form submission
 
     When User upload a CV
     Then File should be uploaded
-    And All required fields should be filled with old
+    And All required fields should be filled
