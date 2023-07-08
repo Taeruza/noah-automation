@@ -45,3 +45,4 @@ To use Allure reporting, you can run with env param: `USE_ALLURE=1`, and then us
 
 - run the command `npm run allure`.
 # noah-automation
+# noah-automation
