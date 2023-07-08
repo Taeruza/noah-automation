@@ -1,5 +1,9 @@
 # Automation of Application Form Submission
 
+## To install dependencies
+
+`npm i`
+
 ## To run your tests
 
 `npm run test` or `npx cucumber-js` runs all tests
@@ -7,7 +11,7 @@
 
 ## Browser selection
 
-By default we will use chromium. You can define an envrionment variable called BROWSER and
+Browser by default is chromium. You can define an envrionment variable called BROWSER and
 set the name of the browser. Available options: chromium, firefox, webkit
 
 On Linux and Mac you can write:
@@ -33,6 +37,10 @@ In [cucumber.mjs](cucumber.mjs) file, modify the options.
 
 To use Allure reporting, you can run with env param: `USE_ALLURE=1`, and then use the `npm run allure` to show the report.
 
+## To run tests in headfull mode (debug purposes only!)
+
+Change `headless: true` to `headless: false` in [config.ts](./src/helpers/config.ts) file.
+
 ## To check for typescript, linting and gherkin errors
 
 - run the command `npm run build`.
@@ -44,5 +52,3 @@ To use Allure reporting, you can run with env param: `USE_ALLURE=1`, and then us
 ## To view allure report
 
 - run the command `npm run allure`.
-# noah-automation
-# noah-automation

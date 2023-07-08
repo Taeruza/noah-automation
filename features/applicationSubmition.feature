@@ -11,7 +11,7 @@ Feature: Application form submission
 
     When User upload a CV
     Then File should be uploaded
-    And All required fields should be filled
+    And All required fields should be automatically filled
 
   Scenario: Application form that allready filled should not be automatically filled after CV was uploaded
     Given User click on the "Software Development Engineer in Test (SDET)" role link
@@ -20,4 +20,4 @@ Feature: Application form submission
 
     When User upload a CV
     Then File should be uploaded
-    And All required fields should be filled
+    And All required fields should not be overwritten
